@@ -61,6 +61,27 @@ const onSubmit = async () => {
         <option value="Stéphane">Stéphane</option>
         <option value="Alain">Alain</option>
       </select>
+      <div v-if="!props.newInvoice">
+        <p class="mb-0">Services</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Montant unitiare</th>
+              <th scope="col">Montant total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="service in form.services" :key="service.name">
+              <th class="fw-normal">{{ service.name }}</th>
+              <th class="fw-normal">{{ service.quantity }}</th>
+              <th class="fw-normal">{{ service.unitPrice }}</th>
+              <th class="fw-normal">{{ service.unitPrice * service.quantity }}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="d-flex gap-3">
         <RouterLink class="btn btn-danger w-50" to="/invoices"><i class="bi bi-cash-stack"></i> Annuler</RouterLink>
         <button type="submit" class="btn btn-primary w-100"><i class="bi bi-check-circle"></i> Enregistrer</button>
