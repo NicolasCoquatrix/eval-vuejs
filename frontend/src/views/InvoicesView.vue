@@ -27,7 +27,7 @@ onBeforeMount(async () => {
         <th scope="col">Client</th>
         <th scope="col">Prix HT</th>
         <th scope="col">Prix TTC</th>
-        <th scope="col"></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
