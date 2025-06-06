@@ -15,9 +15,15 @@ const router = createRouter({
       component: () => import('@/views/InvoicesView.vue')
     },
     {
-      path: '/invoices-edit',
-      name: 'invoices-edit',
-      component: () => import('@/views/InvoicesEditView.vue')
+      path: '/invoices/new',
+      name: 'invoices-post',
+      component: () => import('@/views/InvoicesPostView.vue')
+    },
+    {
+      path: '/invoices/:invoicesId',
+      name: 'invoices-push',
+      component: () => import('@/views/InvoicesPushView.vue'),
+      props: true,
     },
     {
       path: '/customers',

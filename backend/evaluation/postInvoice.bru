@@ -1,0 +1,39 @@
+meta {
+  name: postInvoice
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/invoices
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "number":"F1",
+    "description":"Facture 1",
+    "issueDate":"2025-06-05",
+    "customer":"Alain",
+    "discount": 0,
+    "amountPaid": 0,
+    "services": [
+      {
+          "name": "Service 1",
+          "quantity": 2,
+          "unitPrice": 450
+      },
+      {
+          "name": "Service 2",
+          "quantity": 5,
+          "unitPrice": 450
+      },
+      {
+          "name": "Service 3",
+          "quantity": 1,
+          "unitPrice": 250
+      }
+    ]
+  }
+}

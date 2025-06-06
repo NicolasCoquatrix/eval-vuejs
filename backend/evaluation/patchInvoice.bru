@@ -1,0 +1,23 @@
+meta {
+  name: patchInvoice
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{url}}/invoices/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: e252ec6d-d340-49d4-a68a-593f294055b7
+}
+
+body:json {
+  {
+    "description": "Description",
+    "discount": 100,
+    "amountPaid": 500
+  }
+}

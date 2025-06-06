@@ -1,0 +1,15 @@
+meta {
+  name: getInvoice
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/invoices/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
