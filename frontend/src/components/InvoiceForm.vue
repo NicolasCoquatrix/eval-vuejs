@@ -26,7 +26,12 @@ const invoiceStore = useInvoiceStore()
 const { createInvoice, updateInvoice } = invoiceStore
 
 const form = ref({ ...invoiceInterface })
-form.value = { ...props.data }
+form.value = {
+  ...invoiceInterface,
+  ...props.data,
+  discount: props.data.discount ?? 0,
+  amountPaid: props.data.amountPaid ?? 0
+}
 if (!form.value.services) form.value.services = []
 
 const addService = () => {
